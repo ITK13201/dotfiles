@@ -1,0 +1,58 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+add_newline = true
+command_timeout = 5000
+
+format = """
+$username$hostname $directory$nix_shell$git_branch$git_status$rust$golang$nodejs$package$status$cmd_duration
+$character"""
+
+[directory]
+truncation_length = 2
+style = "fg:4 italic"
+
+[git_branch]
+symbol = "⎇ "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+up_to_date = '✓ '
+staged = '+\($count\) '
+ahead = '⇡${count} '
+diverged = '⇕⇡${ahead_count}⇣${behind_count} '
+behind = '⇣${count} '
+stashed = '$ '
+conflicted = '! '
+deleted = '✗ '
+renamed = '≡ '
+modified = '! '
+untracked = '? '
+
+[nix_shell]
+format = 'via [nix $state( \[$name\])]($style) '
+pure_msg = "pure"
+impure_msg = "impure"
+symbol = "❄ "
+
+[time]
+format = "[$time]($style) "
+time_format = "%R"
+style = "fg:#e2e2e5 bold"
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "fg:14 bold"
+
+[username]
+format = "[$user]($style)"
+style_user = "fg:12 bold"
+show_always = true
+
+[hostname]
+format = "[@](fg:245)[$hostname]($style)"
+style = "fg:8 bold"
+ssh_only = true
+
+[status]
+disabled = false
