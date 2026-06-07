@@ -13,10 +13,13 @@
       share = true;
     };
     shellAliases = {
-      ll = "ls -la";
-      la = "ls -A";
+      ls = "eza";
+      la = "eza -a";
+      ll = "eza -la --git";
       ".." = "cd ..";
       "..." = "cd ../..";
+      cat = "bat";
+      find = "fd";
     };
   };
 }
