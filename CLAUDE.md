@@ -27,6 +27,22 @@ itk の NixOS 設定。Nix Flakes + Home Manager で管理する。
 - **`environment.systemPackages` は `system/environment.nix` に集約する**
   - 各 misc モジュールがパッケージを個別に追加しない
 
+## コミットメッセージ規則
+
+Conventional Commits 形式を使う。
+
+```
+<type>: <概要>
+```
+
+| type | 用途 |
+|---|---|
+| `feat` | 新機能・新モジュールの追加 |
+| `fix` | 設定ミスや不具合の修正 |
+| `chore` | ビルド・ツール・ドキュメントなどの雑務 |
+| `refactor` | 機能変更を伴わない構造変更 |
+| `docs` | ドキュメントのみの変更 |
+
 ## ビルド・デプロイ
 
 ```bash

@@ -15,6 +15,7 @@
     ../../nixos/settings/system/environment.nix
     ../../nixos/settings/nix/nix.nix
     ../../nixos/settings/nix/nixpkgs.nix
+    ../../nixos/settings/graphics/nvidia.nix
     ../../nixos/settings/desktop/fonts.nix
     ../../nixos/settings/desktop/plasma.nix
     ../../nixos/settings/desktop/pipewire.nix
