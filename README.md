@@ -50,7 +50,21 @@ age-keygen -o ~/.config/sops/age/keys.txt
 # 公開鍵を .sops.yaml に記入する
 ```
 
-### 4. 適用
+### 4. 1Password のセットアップ
+
+1. 1Password をインストール・サインイン
+2. **設定 → セキュリティ → SSH エージェントを使用** をオン
+3. SSH 鍵を 1Password の「SSH Keys」カテゴリに登録
+
+### 5. GPG 鍵のインポート（任意）
+
+```bash
+# バックアップから復元する場合
+gpg --import gpg-public.asc
+gpg --import gpg-secret.asc
+```
+
+### 6. 適用
 
 ```bash
 make switch

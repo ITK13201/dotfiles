@@ -7,6 +7,18 @@
 ```
 home-manager/
 ├── common/        # 複数マシン共通の設定（シェル・エディタ・Git 等）
+│   ├── cli/
+│   │   ├── default.nix   # bat, fzf, zoxide, btop, eza, fd, ripgrep, jq, duf, dust
+│   │   ├── ssh/          # SSH クライアント設定（1Password SSH エージェント）
+│   │   └── gpg/          # GPG エージェント（pinentry-qt）
+│   ├── editor/
+│   │   └── vscode/       # VSCode 設定
+│   ├── git/              # git 設定
+│   ├── nix/              # direnv + nix-direnv
+│   └── shell/
+│       ├── starship/     # starship プロンプト（Tokyo Night）
+│       ├── tmux/         # tmux（vi モード・C-a prefix）
+│       └── zsh/          # zsh + vi-mode + fzf-tab + fuzzy 履歴
 ├── linux/         # Linux 固有の設定（XDG 等）
 ├── desktop/       # デスクトップアプリ固有の設定
 └── profiles/      # マシンごとのユーザー設定
