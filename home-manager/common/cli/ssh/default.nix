@@ -23,11 +23,6 @@
         User = "ubuntu";
       };
 
-      "git-codecommit.*.amazonaws.com" = {
-        User = "APKATTQBL3EJYRNG72NF";
-        TCPKeepAlive = "yes";
-      };
-
       "vpn gate" = {
         HostName = "45.32.131.230";
         User = "linuxuser";
