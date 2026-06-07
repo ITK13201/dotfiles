@@ -40,8 +40,8 @@
           "Noto Color Emoji"
         ];
         monospace = [
+          "Hack Nerd Font Mono"
           "PlemolJP HS"
-          "PlemolJP Console NF"
           "Noto Color Emoji"
         ];
         emoji = [ "Noto Color Emoji" ];
