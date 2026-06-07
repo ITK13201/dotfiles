@@ -2,17 +2,14 @@
 
 {
   boot.loader = {
-    systemd-boot = {
-      enable = true;
-      configurationLimit = 10;
-      extraEntries = {
-        "windows.conf" = ''
-          title   Windows Boot Manager
-          efi     /EFI/Microsoft/Boot/bootmgfw.efi
-        '';
-      };
-    };
+    systemd-boot.enable = false;
     efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+    };
     timeout = 5;
   };
 }
