@@ -11,6 +11,8 @@ dotfiles/
 ├── profiles/              # マシンごとの設定エントリーポイント
 ├── nixos/                 # NixOS モジュール群
 ├── home-manager/          # Home Manager モジュール群
+├── config/                # Nix で管理しない設定ファイル（starship 等）
+├── overlays/              # nixpkgs オーバーレイ
 └── secrets/               # sops-nix 暗号化シークレット
 ```
 

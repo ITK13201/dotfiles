@@ -7,9 +7,11 @@
 ```
 home-manager/
 ├── common/        # 複数マシン共通の設定（シェル・エディタ・Git 等）
+├── linux/         # Linux 固有の設定（XDG 等）
+├── desktop/       # デスクトップアプリ固有の設定
 └── profiles/      # マシンごとのユーザー設定
     └── <hostname>/
-        └── default.nix  # common/* を import して組み立てる
+        └── default.nix  # common/ + linux/ + desktop/ を import して組み立てる
 ```
 
 ## 設計方針
