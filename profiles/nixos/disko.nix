@@ -2,10 +2,10 @@
 # 再インストール時のパーティション構成を宣言的に管理する。
 #
 # 現在の構成 (/dev/sdb, 931.5G HDD):
-#   sdb1  1G   vfat  /boot (EFI)
-#   sdb2  80G  ext4  /
-#   sdb3  800G ext4  /home
-#   sdb4  50G  (未使用)
+#   sdb1  1G   vfat  /boot        (LABEL: NIX-BOOT)
+#   sdb2  80G  ext4  /            (LABEL: NIX-ROOT)
+#   sdb3  800G ext4  /home        (LABEL: NIX-HOME)
+#   sdb4  50G  exfat /mnt/shared  (LABEL: NIX-SHARED)
 #
 # 再インストール手順:
 #   sudo nix run 'github:nix-community/disko/latest#disko-install' -- \
@@ -35,6 +35,10 @@
                   "fmask=0077"
                   "dmask=0077"
                 ];
+                extraArgs = [
+                  "-n"
+                  "NIX-BOOT"
+                ];
               };
             };
             root = {
@@ -43,6 +47,10 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/";
+                extraArgs = [
+                  "-L"
+                  "NIX-ROOT"
+                ];
               };
             };
             home = {
@@ -51,9 +59,24 @@
                 type = "filesystem";
                 format = "ext4";
                 mountpoint = "/home";
+                extraArgs = [
+                  "-L"
+                  "NIX-HOME"
+                ];
               };
             };
-            # sdb4 相当: 残り ~50G は未割り当てのまま
+            extra = {
+              size = "50G";
+              content = {
+                type = "filesystem";
+                format = "exfat";
+                mountpoint = "/mnt/shared";
+                extraArgs = [
+                  "-L"
+                  "NIX-SHARED"
+                ];
+              };
+            };
           };
         };
       };

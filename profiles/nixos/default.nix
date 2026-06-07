@@ -12,6 +12,7 @@
     ./disko.nix
     ../../nixos/settings/boot
     ../../nixos/settings/system/networking.nix
+    ./filesystems.nix
     ../../nixos/settings/system/security.nix
     ../../nixos/settings/system/bluetooth.nix
     ../../nixos/settings/system/i18n.nix
