@@ -11,6 +11,7 @@
     ../../nixos/settings/boot
     ../../nixos/settings/system/networking.nix
     ../../nixos/settings/system/security.nix
+    ../../nixos/settings/system/bluetooth.nix
     ../../nixos/settings/system/i18n.nix
     ../../nixos/settings/system/environment.nix
     ../../nixos/settings/nix/nix.nix
