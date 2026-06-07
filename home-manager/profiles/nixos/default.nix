@@ -3,6 +3,8 @@
 {
   imports = [
     ../../common
+    ../../linux
+    ../../desktop
   ];
 
   home = {
