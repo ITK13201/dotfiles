@@ -2,6 +2,9 @@
 
 itk の NixOS 設定。Nix Flakes + Home Manager で管理する。
 
+Home Manager は NixOS 統合モードで動作する (`home-manager switch` は使わない)。
+シークレットは sops-nix (age 暗号化) で管理する。詳細は `secrets/README.md` 参照。
+
 ## ドキュメント
 
 各ディレクトリの役割・設計方針は README.md に記載している。
@@ -46,9 +49,13 @@ Conventional Commits 形式を使う。
 ## ビルド・デプロイ
 
 ```bash
-# ビルド確認のみ
-sudo nixos-rebuild build --flake ".#<hostname>"
+make eval     # 評価のみ（ビルドなし）
+make build    # ビルド確認のみ
+make switch   # ビルド + 適用
+make fmt      # .nix ファイルのフォーマット
+make update   # flake inputs を更新
 
-# 適用
-sudo nixos-rebuild switch --flake ".#<hostname>"
+# 特定のホスト名を指定する場合
+make nixos-build-<hostname>
+make nixos-<hostname>
 ```
