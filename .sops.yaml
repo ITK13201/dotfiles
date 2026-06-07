@@ -1,0 +1,8 @@
+keys:
+  - &itk_nixos age1dkx6yvpl2h2eel565h0geuruf93ln6lcnt70mgysxcftp86lgejsjd9hl9
+
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - age:
+          - *itk_nixos
