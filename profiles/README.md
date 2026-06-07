@@ -8,7 +8,9 @@
 profiles/
 └── <hostname>/
     ├── default.nix                 # nixos/settings/* を import して組み立てる
-    └── hardware-configuration.nix  # nixos-generate-config で自動生成
+    ├── hardware-configuration.nix  # nixos-generate-config で自動生成
+    ├── disko.nix                   # 宣言的ディスク構成（再インストール用）
+    └── filesystems.nix             # マシン固有の追加マウント設定
 ```
 
 ## 設計方針
@@ -34,4 +36,4 @@ nixos-generate-config --show-hardware-config > profiles/<hostname>/hardware-conf
 
 | hostname | 用途 | system |
 |---|---|---|
-| nixos | メイン PC (Intel, KDE Plasma 6) | x86_64-linux |
+| nixos | メイン PC (Intel + NVIDIA RTX 3060 Ti, KDE Plasma 6) | x86_64-linux |
