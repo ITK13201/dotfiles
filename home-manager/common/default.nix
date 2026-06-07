@@ -7,6 +7,7 @@
     ./cli
     ./cli/ssh
     ./cli/gpg
+    ./cli/claude
     ./shell/zsh
     ./shell/tmux
     ./shell/starship

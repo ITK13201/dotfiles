@@ -4,6 +4,7 @@ itk の NixOS 設定。Nix Flakes + Home Manager で管理する。
 
 Home Manager は NixOS 統合モードで動作する (`home-manager switch` は使わない)。
 シークレットは sops-nix (age 暗号化) で管理する。詳細は `secrets/README.md` 参照。
+`nixpkgs-stable` (26.05) は `pkgs-stable` として `specialArgs` 経由で参照できる。
 
 ## ドキュメント
 
@@ -64,6 +65,8 @@ make build    # ビルド確認のみ
 make switch   # ビルド + 適用
 make fmt      # .nix ファイルのフォーマット
 make update   # flake inputs を更新
+make clean-store  # ガベージコレクション（フル）
+make clean-oldgen # ガベージコレクション（旧世代のみ）
 
 # 特定のホスト名を指定する場合
 make nixos-build-<hostname>
