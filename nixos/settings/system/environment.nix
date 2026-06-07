@@ -15,6 +15,7 @@
       sops
       gnumake
       claude-code
+      discord
     ];
     variables = {
       GTK_IM_MODULE = "fcitx";

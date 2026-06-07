@@ -27,5 +27,6 @@
     jq
     duf
     dust
+    fastfetch
   ];
 }
