@@ -2,3 +2,4 @@ result
 result-*
 .claude/settings.local.json
 docs/
+.pre-commit-config.yaml
