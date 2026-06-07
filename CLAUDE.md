@@ -15,6 +15,8 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
 | `nixos/` | [nixos/README.md](nixos/README.md) |
 | `home-manager/` | [home-manager/README.md](home-manager/README.md) |
 | `secrets/` | [secrets/README.md](secrets/README.md) |
+| `config/` | [config/README.md](config/README.md) |
+| `overlays/` | [overlays/README.md](overlays/README.md) |
 
 ## モジュール分割の原則
 
@@ -29,6 +31,14 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
   - どのモジュールが何のオプションを担当しているか、ファイルを見ただけで分かるようにする
 - **`environment.systemPackages` は `system/environment.nix` に集約する**
   - 各 misc モジュールがパッケージを個別に追加しない
+
+## パッケージの置き場所
+
+| 種別 | 置き場所 |
+|---|---|
+| CLI ツール | `home-manager/common/cli/default.nix`（`home.packages`） |
+| デスクトップアプリ・システムツール | `nixos/settings/system/environment.nix`（`environment.systemPackages`） |
+| Nix で管理しない設定ファイル | `config/`（`builtins.readFile` または `xdg.configFile.source` で参照） |
 
 ## コミットメッセージ規則
 
