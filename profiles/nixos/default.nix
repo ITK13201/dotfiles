@@ -7,7 +7,9 @@
 
 {
   imports = [
+    inputs.disko.nixosModules.disko
     ./hardware-configuration.nix
+    ./disko.nix
     ../../nixos/settings/boot
     ../../nixos/settings/system/networking.nix
     ../../nixos/settings/system/security.nix
