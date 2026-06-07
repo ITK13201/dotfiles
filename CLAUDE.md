@@ -41,6 +41,12 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
 | デスクトップアプリ・システムツール | `nixos/settings/system/environment.nix`（`environment.systemPackages`） |
 | Nix で管理しない設定ファイル | `config/`（`builtins.readFile` または `xdg.configFile.source` で参照） |
 
+`home.file` に `force = true` が設定されているファイル（例: `~/.claude/`）は `make switch` で上書きされる。変更は `config/claude/` を編集して行う。
+
+## コミット署名
+
+コミットは 1Password SSH エージェント（`op-ssh-sign`）で自動署名される。許可署名者は `config/ssh/allowed_signers` で管理する。
+
 ## コミットメッセージ規則
 
 Conventional Commits 形式を使う。
