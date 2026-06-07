@@ -77,6 +77,5 @@ let
 in
 
 {
-  xdg.configFile."Code/User/keybindings.json".text =
-    lib.generators.toJSON { } keybindings;
+  xdg.configFile."Code/User/keybindings.json".text = lib.generators.toJSON { } keybindings;
 }

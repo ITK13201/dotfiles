@@ -14,6 +14,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -23,11 +28,13 @@
       nixpkgs-stable,
       home-manager,
       sops-nix,
+      treefmt-nix,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
       username = "itk";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
@@ -47,5 +54,7 @@
           ./profiles/nixos
         ];
       };
+
+      formatter.${system} = (treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
     };
 }
