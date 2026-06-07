@@ -16,7 +16,6 @@
         User = "git";
         Port = 22;
         TCPKeepAlive = "yes";
-        IdentitiesOnly = "yes";
       };
 
       "rpi" = {
@@ -32,7 +31,6 @@
       "vpn gate" = {
         HostName = "45.32.131.230";
         User = "linuxuser";
-        IdentitiesOnly = "yes";
       };
 
       "pve.i-tk.dev" = {
