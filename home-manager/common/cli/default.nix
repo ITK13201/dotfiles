@@ -28,5 +28,12 @@
     duf
     dust
     fastfetch
+    kubectl
+    kubernetes-helm
+    kustomize
+    terraform
+    ansible
+    devenv
+    curl
   ];
 }

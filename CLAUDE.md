@@ -4,7 +4,19 @@ itk の NixOS 設定。Nix Flakes + Home Manager で管理する。
 
 Home Manager は NixOS 統合モードで動作する (`home-manager switch` は使わない)。
 シークレットは sops-nix (age 暗号化) で管理する。詳細は `secrets/README.md` 参照。
-`nixpkgs-stable` (26.05) は `pkgs-stable` として `specialArgs` 経由で参照できる。
+`nixpkgs-stable` (26.05) は `pkgs-stable` として `specialArgs` 経由で参照できる。`pkgs-stable` と `system` は NixOS モジュールのみアクセス可能（Home Manager の `extraSpecialArgs` には `inputs` と `username` のみ渡される）。
+
+## Flake Inputs
+
+| input | 用途 |
+|---|---|
+| `nixpkgs` | NixOS unstable（メイン） |
+| `nixpkgs-stable` | 26.05（独立管理） |
+| `home-manager` | Home Manager |
+| `sops-nix` | シークレット管理 |
+| `treefmt-nix` | nixfmt フォーマッター設定 |
+| `git-hooks` | pre-commit hook（nixfmt） |
+| `disko` | 宣言的ディスク構成（未実装） |
 
 ## ドキュメント
 
@@ -75,6 +87,9 @@ make clean-store  # ガベージコレクション（フル）
 make clean-oldgen # ガベージコレクション（旧世代のみ）
 
 # 特定のホスト名を指定する場合
+make nixos-eval-<hostname>
 make nixos-build-<hostname>
 make nixos-<hostname>
 ```
+
+`nix develop` で devShell に入ると git pre-commit hook が有効化され、コミット時に nixfmt が自動実行される。

@@ -16,6 +16,7 @@
       gnumake
       claude-code
       discord
+      obsidian
     ];
     variables = {
       GTK_IM_MODULE = "fcitx";

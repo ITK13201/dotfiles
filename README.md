@@ -69,3 +69,36 @@ gpg --import gpg-secret.asc
 ```bash
 make switch
 ```
+
+## 開発環境（複数バージョン管理）
+
+グローバルには Python・Go・Node.js のデフォルトバージョンのみインストールされている。
+プロジェクトごとに異なるバージョンを使いたい場合は `devenv` + `direnv` を使う。
+
+### セットアップ
+
+```bash
+cd ~/your-project
+devenv init        # devenv.nix と .envrc を生成
+echo "use devenv" > .envrc
+direnv allow       # 以降は cd するだけで自動的に環境が切り替わる
+```
+
+### devenv.nix の例
+
+```nix
+{ pkgs, ... }: {
+  languages.python = {
+    enable = true;
+    version = "3.11";
+  };
+  languages.go = {
+    enable = true;
+    version = "1.21";
+  };
+  languages.javascript = {
+    enable = true;
+    package = pkgs.nodejs_20;
+  };
+}
+```

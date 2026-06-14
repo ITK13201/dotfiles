@@ -24,8 +24,10 @@
     ../../nixos/settings/desktop/plasma.nix
     ../../nixos/settings/desktop/pipewire.nix
     ../../nixos/settings/display/sddm.nix
+    ../../nixos/settings/system/tailscale.nix
+    ../../nixos/settings/system/docker.nix
+    ../../nixos/settings/system/fwupd.nix
     ../../nixos/settings/misc/cups.nix
-    ../../nixos/settings/misc/fwupd.nix
     ../../nixos/settings/misc/1password.nix
     ../../nixos/settings/misc/programs.nix
     ../../nixos/settings/misc/sops.nix
@@ -46,6 +48,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kate

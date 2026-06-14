@@ -5,6 +5,7 @@
     ./git
     ./nix
     ./cli
+    ./lang
     ./cli/ssh
     ./cli/gpg
     ./cli/claude
