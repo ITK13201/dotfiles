@@ -1,0 +1,28 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "nix": {
+    "enabled": true
+  },
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": [
+      "* 6 * * *"
+    ],
+    "automerge": true,
+    "automergeStrategy": "rebase"
+  },
+  "packageRules": [
+    {
+      "matchFileNames": [
+        "renovate.json"
+      ],
+      "groupName": "renovate configuration",
+      "automerge": true
+    }
+  ],
+  "timezone": "Asia/Tokyo",
+  "dependencyDashboard": true
+}
