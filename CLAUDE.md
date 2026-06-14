@@ -16,7 +16,7 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
 | `sops-nix` | シークレット管理 |
 | `treefmt-nix` | nixfmt フォーマッター設定 |
 | `git-hooks` | pre-commit hook（nixfmt） |
-| `disko` | 宣言的ディスク構成（未実装） |
+| `disko` | 宣言的ディスク構成 |
 
 ## ドキュメント
 
@@ -42,6 +42,8 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
 - **機能的に密結合していても名前空間が違えば分ける**
   - 「PipeWire に必要だから」という理由で `security.*` を `pipewire.nix` に書かない
   - どのモジュールが何のオプションを担当しているか、ファイルを見ただけで分かるようにする
+- **例外: サービスの動作に不可分な付随設定は同一ファイルにまとめてよい**
+  - `tailscale.nix` のように `networking.*`・`systemd.*`・`boot.*` が一体で機能する場合はこの限りでない
 - **`environment.systemPackages` は `system/environment.nix` に集約する**
   - 各 misc モジュールがパッケージを個別に追加しない
 
@@ -50,8 +52,11 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
 | 種別 | 置き場所 |
 |---|---|
 | CLI ツール | `home-manager/common/cli/default.nix`（`home.packages`） |
+| 言語ランタイム・開発ツール | `home-manager/common/lang/default.nix`（`home.packages`） |
 | デスクトップアプリ・システムツール | `nixos/settings/system/environment.nix`（`environment.systemPackages`） |
 | Nix で管理しない設定ファイル | `config/`（`builtins.readFile` または `xdg.configFile.source` で参照） |
+
+デスクトップアプリの自動起動は `home-manager/desktop/default.nix` で `xdg.configFile."autostart/<app>.desktop"` を使う。
 
 `home.file` に `force = true` が設定されているファイル（例: `~/.claude/`）は `make switch` で上書きされる。変更は `config/claude/` を編集して行う。
 
