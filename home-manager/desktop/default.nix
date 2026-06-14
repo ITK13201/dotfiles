@@ -1,6 +1,6 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  # デスクトップアプリ固有の設定
-  # KDE Plasma アプリ、ファイラー等の設定をここに追加する
+  xdg.configFile."autostart/1password.desktop".source =
+    "${pkgs._1password-gui}/share/applications/1password.desktop";
 }
