@@ -35,5 +35,6 @@
     ansible
     devenv
     curl
+    yamlfmt
   ];
 }

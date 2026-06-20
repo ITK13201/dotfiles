@@ -1,0 +1,17 @@
+[[ssh-keys]]
+vault = "Personal"
+
+[[ssh-keys]]
+vault = "Business"
+
+[[ssh-keys]]
+vault = "K8s"
+
+[[ssh-keys]]
+vault = "Proxmox VE"
+
+[[ssh-keys]]
+vault = "Raspberry Pi"
+
+[[ssh-keys]]
+vault = "VPS"

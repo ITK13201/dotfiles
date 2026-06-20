@@ -31,6 +31,10 @@ Home Manager は NixOS 統合モードで動作する (`home-manager switch` は
 | `config/` | [config/README.md](config/README.md) |
 | `overlays/` | [overlays/README.md](overlays/README.md) |
 
+## hardware-configuration.nix
+
+`profiles/nixos/hardware-configuration.nix` は `nixos-generate-config` で自動生成される。ハードウェア構成変更時は再生成する。手動編集は最小限にとどめる。
+
 ## モジュール分割の原則
 
 `nixos/settings/` 配下のモジュールは以下の原則で分割する。
@@ -98,3 +102,14 @@ make nixos-<hostname>
 ```
 
 `nix develop` で devShell に入ると git pre-commit hook が有効化され、コミット時に nixfmt が自動実行される。
+
+### ロールバック
+
+```bash
+nixos-rebuild switch --rollback   # 直前の世代に戻す
+# またはブートローダーで前の世代を選択して起動後に switch
+```
+
+## Renovate
+
+`flake.lock` は Renovate が毎日自動更新し、GitHub PR 経由で自動マージされる。手動で `make update` を実行する場合は Renovate PR との競合に注意する。

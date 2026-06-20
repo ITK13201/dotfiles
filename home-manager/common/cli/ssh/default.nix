@@ -1,6 +1,11 @@
 { ... }:
 
 {
+  xdg.configFile."1Password/ssh/agent.toml" = {
+    source = ../../../../config/1password/ssh/agent.toml;
+    force = true;
+  };
+
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
