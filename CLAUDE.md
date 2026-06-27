@@ -86,14 +86,17 @@ Conventional Commits 形式を使う。
 
 ## ビルド・デプロイ
 
+**注意:** `make` コマンドはリポジトリルート (`$HOME/dotfiles`) から実行する必要がある。Makefile がこれを強制する。
+
 ```bash
 make eval     # 評価のみ（ビルドなし）
 make build    # ビルド確認のみ
 make switch   # ビルド + 適用
-make fmt      # .nix ファイルのフォーマット
+make fmt      # .nix ファイルのフォーマット（nixfmt のみ）
 make update   # flake inputs を更新
 make clean-store  # ガベージコレクション（フル）
 make clean-oldgen # ガベージコレクション（旧世代のみ）
+make nix-install  # 新マシンへの Nix セットアップ（Determinate Systems インストーラー）
 
 # 特定のホスト名を指定する場合
 make nixos-eval-<hostname>
@@ -101,14 +104,7 @@ make nixos-build-<hostname>
 make nixos-<hostname>
 ```
 
-`nix develop` で devShell に入ると git pre-commit hook が有効化され、コミット時に nixfmt が自動実行される。
-
-### ロールバック
-
-```bash
-nixos-rebuild switch --rollback   # 直前の世代に戻す
-# またはブートローダーで前の世代を選択して起動後に switch
-```
+`nix develop` で devShell に入ると git pre-commit hook が有効化され、コミット時に nixfmt が自動実行される。`yamlfmt` は CLI ツールとしてインストール済みだが `treefmt` には統合されていないため、YAML ファイルのフォーマットは手動で実行する（`yamlfmt <file>`）。
 
 ## Renovate
 

@@ -12,6 +12,7 @@ let
   golangTools = with pkgs; [
     go
     gopls
+    swag
   ];
 
   nodeTools = with pkgs; [
