@@ -9,6 +9,7 @@
         email = "57588603+ITK13201@users.noreply.github.com";
       };
       init.defaultBranch = "main";
+      core.editor = "vim";
       pull.rebase = false;
       commit.gpgsign = true;
       gpg.format = "ssh";
