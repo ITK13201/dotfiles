@@ -17,6 +17,8 @@
       claude-code
       discord
       obsidian
+      gptfdisk
+      gparted
     ];
     variables = {
       GTK_IM_MODULE = "fcitx";
