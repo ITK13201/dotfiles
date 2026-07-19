@@ -25,7 +25,7 @@
     ../../nixos/settings/desktop/pipewire.nix
     ../../nixos/settings/display/sddm.nix
     ../../nixos/settings/system/tailscale.nix
-    ../../nixos/settings/system/docker.nix
+    ../../nixos/settings/system/virtualisation.nix
     ../../nixos/settings/system/fwupd.nix
     ../../nixos/settings/misc/cups.nix
     ../../nixos/settings/misc/1password.nix
