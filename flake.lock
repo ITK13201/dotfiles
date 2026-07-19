@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "compact-plus": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783519232,
+        "narHash": "sha256-g8YUYrAW9LN7ZK9QeOvHjCMBx9GdGYQLw4Q6UqBFItA=",
+        "owner": "u-ichi",
+        "repo": "compact-plus",
+        "rev": "0f85ec8a81638683092a891e615ff3d8a04c84cc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "u-ichi",
+        "repo": "compact-plus",
+        "type": "github"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -133,6 +149,7 @@
     },
     "root": {
       "inputs": {
+        "compact-plus": "compact-plus",
         "disko": "disko",
         "git-hooks": "git-hooks",
         "home-manager": "home-manager",

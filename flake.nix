@@ -29,6 +29,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    compact-plus = {
+      url = "github:u-ichi/compact-plus";
+      flake = false;
+    };
   };
 
   outputs =
