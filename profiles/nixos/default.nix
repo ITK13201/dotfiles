@@ -30,6 +30,7 @@
     ../../nixos/settings/misc/cups.nix
     ../../nixos/settings/misc/1password.nix
     ../../nixos/settings/misc/programs.nix
+    ../../nixos/settings/misc/steam.nix
     ../../nixos/settings/misc/sops.nix
     inputs.home-manager.nixosModules.home-manager
   ];
