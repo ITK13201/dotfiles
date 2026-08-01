@@ -19,6 +19,7 @@
       obsidian
       gptfdisk
       gparted
+      (bottles.override { removeWarningPopup = true; })
     ];
     variables = {
       GTK_IM_MODULE = "fcitx";
