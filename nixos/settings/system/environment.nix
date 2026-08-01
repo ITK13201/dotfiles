@@ -20,6 +20,7 @@
       gptfdisk
       gparted
       (bottles.override { removeWarningPopup = true; })
+      lutris
     ];
     variables = {
       GTK_IM_MODULE = "fcitx";
