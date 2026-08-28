@@ -17,9 +17,16 @@ let
 
   nodeTools = with pkgs; [
     nodejs
+    pnpm
   ];
 in
 
 {
   home.packages = pythonTools ++ golangTools ++ nodeTools;
+
+  home.sessionVariables = {
+    PNPM_HOME = "$HOME/.local/share/pnpm";
+  };
+
+  home.sessionPath = [ "$HOME/.local/share/pnpm/bin" ];
 }
