@@ -17,7 +17,6 @@ let
 
   nodeTools = with pkgs; [
     nodejs
-    pnpm
   ];
 in
 
