@@ -21,6 +21,7 @@
       gparted
       (bottles.override { removeWarningPopup = true; })
       lutris
+      thunderbird
     ];
     variables = {
       GTK_IM_MODULE = "fcitx";
