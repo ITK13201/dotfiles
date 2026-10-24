@@ -22,7 +22,7 @@ home-manager/
 ├── linux/         # Linux 固有の設定（XDG 等）
 ├── desktop/       # デスクトップアプリ固有の設定
 │   ├── theme/        # カーソル・GTK/Qt テーマ（ダーク）
-│   ├── hyprland/     # Hyprland 設定（config/hypr/hyprland.lua を配置）
+│   ├── hyprland/     # Hyprland 設定（config/hypr/hyprland.lua を配置、プラグインパスを plugins.lua に生成）
 │   ├── hyprlock/     # ロック画面
 │   ├── hypridle/     # 放置時の自動ロック
 │   ├── hyprpolkitagent/ # polkit 認証ダイアログ

@@ -90,6 +90,51 @@ hl.config({
     },
 })
 
+-----------------
+---- PLUGINS ----
+-----------------
+
+-- plugins.lua は Home Manager が生成する (home-manager/desktop/hyprland/default.nix)
+local plugins = require("plugins")
+hl.plugin.load(plugins.hyprbars)
+
+-- プラグインはロード後の再読込で有効になるため、初回の読み込みでは hl.plugin.hyprbars が存在しない
+if hl.plugin.hyprbars then
+    hl.config({
+        plugin = {
+            hyprbars = {
+                bar_height     = 24,
+                bar_color      = "rgba(1a1b26ee)",
+                bar_text_font  = "Sans",
+                bar_text_size  = 10,
+                bar_padding    = 8,
+                bar_button_padding = 6,
+                bar_part_of_window = true,
+                bar_precedence_over_border = true,
+                col = { text = "rgb(c0caf5)" },
+                on_double_click = [[hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })']],
+            },
+        },
+    })
+
+    -- ボタンは右から順に並ぶ: 閉じる → 最大化 → 最小化 で「- □ x」になる
+    -- Hyprland に最小化の概念は無いため、special:minimized に退避する (SUPER + N で表示)
+    local buttons = {
+        { color = "rgb(f7768e)", icon = "\u{F05AD}", action = "hl.dsp.window.close()" },
+        { color = "rgb(9ece6a)", icon = "\u{F05AF}", action = [[hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" })]] },
+        { color = "rgb(e0af68)", icon = "\u{F05B0}", action = [[hl.dsp.window.move({ workspace = "special:minimized", follow = false })]] },
+    }
+    for _, b in ipairs(buttons) do
+        hl.plugin.hyprbars.add_button({
+            bg_color = b.color,
+            fg_color = "rgb(1a1b26)",
+            size     = 14,
+            icon     = b.icon,
+            action   = "hyprctl dispatch '" .. b.action .. "'",
+        })
+    end
+end
+
 hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 },   { 0.32, 1 }    } })
 hl.curve("linear",       { type = "bezier", points = { { 0, 0 },      { 1, 1 }       } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 },  { 0.75, 1 }    } })
@@ -174,6 +219,9 @@ end
 -- スクラッチパッド
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
+
+-- 最小化したウィンドウ (hyprbars の最小化ボタン) の表示切り替え
+hl.bind(mainMod .. " + N", hl.dsp.workspace.toggle_special("minimized"))
 
 -- マウス: ホイールでワークスペース移動、ドラッグで移動・リサイズ
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
