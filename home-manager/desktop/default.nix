@@ -1,6 +1,23 @@
-{ pkgs, ... }:
+{ osConfig, ... }:
 
 {
+  imports = [
+    ./theme
+    ./hyprland
+    ./hyprlock
+    ./hypridle
+    ./hyprpolkitagent
+    ./hyprshot
+    ./hyprsunset
+    ./cliphist
+    ./kitty
+    ./wofi
+    ./waybar
+    ./dunst
+    ./hyprpaper
+  ];
+
+  # NixOS 側 (programs._1password-gui) と同じパッケージを参照する
   xdg.configFile."autostart/1password.desktop".source =
-    "${pkgs._1password-gui}/share/applications/1password.desktop";
+    "${osConfig.programs._1password-gui.package}/share/applications/com.onepassword.OnePassword.desktop";
 }

@@ -7,8 +7,12 @@ Home Manager の `builtins.readFile` や `xdg.configFile.source` で参照する
 
 ```
 config/
-└── starship/
-    └── starship.toml   # starship プロンプト設定
+├── hypr/
+│   └── hyprland.lua    # Hyprland 設定（Lua）
+├── starship/
+│   └── starship.toml   # starship プロンプト設定
+└── waybar/
+    └── style.css       # waybar スタイル（Tokyo Night）
 ```
 
 ## 方針

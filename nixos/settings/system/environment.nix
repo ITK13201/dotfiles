@@ -20,13 +20,16 @@
       gptfdisk
       gparted
       (bottles.override { removeWarningPopup = true; })
-      lutris
       thunderbird
     ];
     variables = {
-      GTK_IM_MODULE = "fcitx";
       QT_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
+      # NVIDIA + Hyprland (Wayland)
+      LIBVA_DRIVER_NAME = "nvidia";
+      GBM_BACKEND = "nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      NIXOS_OZONE_WL = "1";
     };
   };
 }

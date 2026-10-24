@@ -4,12 +4,14 @@ nixpkgs オーバーレイを管理する。
 
 ## 使い方
 
-`default.nix` はオーバーレイのリストを返す。`flake.nix` の `nixpkgs.overlays` に渡す。
+`default.nix` はオーバーレイのリストを返す。`nixos/settings/nix/nixpkgs.nix` の `nixpkgs.overlays` で読み込む。
 
 ```nix
-nixpkgs.overlays = import ./overlays;
+nixpkgs.overlays = import ../../../overlays;
 ```
 
 ## 構成
 
-現在はオーバーレイなし（空リスト）。パッケージのカスタマイズが必要になったらここに追加する。
+| ファイル | 内容 |
+|---|---|
+| `1password-gui.nix` | 同梱の `chrome_crashpad_handler` に glib の rpath を設定（nixpkgs のパッケージングの漏れの回避策） |

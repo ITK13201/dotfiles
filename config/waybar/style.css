@@ -1,0 +1,88 @@
+/* Tokyo Night */
+* {
+  font-family: "Hack Nerd Font", "Noto Sans CJK JP", sans-serif;
+  font-size: 13px;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+}
+
+window#waybar.main {
+  background: rgba(26, 27, 38, 0.9);
+  color: #c0caf5;
+}
+
+#custom-launcher {
+  color: #7aa2f7;
+  font-size: 16px;
+  padding: 0 12px;
+}
+
+#workspaces button {
+  color: #565f89;
+  padding: 0 8px;
+}
+
+#workspaces button.active {
+  color: #7aa2f7;
+  border-bottom: 2px solid #7aa2f7;
+}
+
+#workspaces button:hover {
+  background: #292e42;
+}
+
+#window {
+  color: #a9b1d6;
+}
+
+#pulseaudio,
+#cpu,
+#memory,
+#tray,
+#clock {
+  padding: 0 10px;
+}
+
+#pulseaudio.muted {
+  color: #565f89;
+}
+
+#clock {
+  color: #bb9af7;
+}
+
+/* ---- dock (画面左) ---- */
+window#waybar.dock {
+  background: transparent;
+}
+
+window#waybar.dock .modules-center {
+  background: rgba(26, 27, 38, 0.85);
+  border: 1px solid #414868;
+  border-radius: 14px;
+  padding: 8px 0;
+}
+
+/* ピン留めと起動中アプリの区切り */
+window#waybar.dock #taskbar {
+  padding-top: 8px;
+  margin-top: 8px;
+  border-top: 1px solid #414868;
+}
+
+window#waybar.dock #image,
+window#waybar.dock #taskbar button {
+  padding: 6px 0;
+  border-radius: 8px;
+}
+
+window#waybar.dock #image:hover,
+window#waybar.dock #taskbar button:hover {
+  background: #292e42;
+}
+
+window#waybar.dock #taskbar button.active {
+  background: #292e42;
+  border-left: 2px solid #7aa2f7;
+}

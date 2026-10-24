@@ -1,4 +1,5 @@
 # nixpkgs オーバーレイ
-# 使用例 (flake.nix の nixosSystem に渡す):
-#   nixpkgs.overlays = import ./overlays;
-[ ]
+# nixos/settings/nix/nixpkgs.nix の nixpkgs.overlays で読み込む
+[
+  (import ./1password-gui.nix)
+]

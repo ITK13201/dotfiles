@@ -21,6 +21,19 @@ home-manager/
 │       └── zsh/          # zsh + vi-mode + fzf-tab + fuzzy 履歴
 ├── linux/         # Linux 固有の設定（XDG 等）
 ├── desktop/       # デスクトップアプリ固有の設定
+│   ├── theme/        # カーソル・GTK/Qt テーマ（ダーク）
+│   ├── hyprland/     # Hyprland 設定（config/hypr/hyprland.lua を配置）
+│   ├── hyprlock/     # ロック画面
+│   ├── hypridle/     # 放置時の自動ロック
+│   ├── hyprpolkitagent/ # polkit 認証ダイアログ
+│   ├── hyprshot/     # スクリーンショット
+│   ├── hyprsunset/   # 夜間の色温度調整
+│   ├── cliphist/     # クリップボード履歴
+│   ├── kitty/        # ターミナル
+│   ├── wofi/         # ランチャー
+│   ├── waybar/       # ステータスバー（systemd user サービス）
+│   ├── dunst/        # 通知デーモン
+│   └── hyprpaper/    # 壁紙
 └── profiles/      # マシンごとのユーザー設定
     └── <hostname>/
         └── default.nix  # common/ + linux/ + desktop/ を import して組み立てる

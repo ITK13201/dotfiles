@@ -21,8 +21,9 @@
     ../../nixos/settings/nix/nixpkgs.nix
     ../../nixos/settings/graphics/nvidia.nix
     ../../nixos/settings/desktop/fonts.nix
-    ../../nixos/settings/desktop/plasma.nix
+    ../../nixos/settings/desktop/hyprland.nix
     ../../nixos/settings/desktop/pipewire.nix
+    ../../nixos/settings/desktop/xdg.nix
     ../../nixos/settings/display/sddm.nix
     ../../nixos/settings/system/tailscale.nix
     ../../nixos/settings/system/virtualisation.nix
@@ -31,6 +32,9 @@
     ../../nixos/settings/misc/1password.nix
     ../../nixos/settings/misc/programs.nix
     ../../nixos/settings/misc/steam.nix
+    ../../nixos/settings/misc/thunar.nix
+    ../../nixos/settings/misc/gvfs.nix
+    ../../nixos/settings/misc/gnome-keyring.nix
     ../../nixos/settings/misc/sops.nix
     inputs.home-manager.nixosModules.home-manager
   ];

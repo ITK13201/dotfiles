@@ -10,10 +10,10 @@
 | `boot/` | ブートローダー設定（GRUB + os-prober でデュアルブート対応） |
 | `system/` | OS 基盤（ロケール・タイムゾーン・日本語入力・ネットワーク・Bluetooth） |
 | `nix/` | Nix デーモン設定（experimental-features, GC, allowUnfree） |
-| `desktop/` | デスクトップ環境（KDE Plasma 6, PipeWire, フォント） |
+| `desktop/` | デスクトップ環境（Hyprland, PipeWire, xdg-desktop-portal, フォント） |
 | `display/` | ディスプレイマネージャー（SDDM） |
 | `graphics/` | GPU ドライバー（NVIDIA） |
-| `misc/` | その他ツール・サービス（1Password, cups, sops, Home Manager 統合） |
+| `misc/` | その他ツール・サービス（1Password, cups, sops, Thunar, gvfs, gnome-keyring, Home Manager 統合） |
 
 ## モジュールの追加方針
 
