@@ -9,8 +9,14 @@ in
     settings = {
       ipc = "on";
       splash = false;
-      # monitor を空にすると全モニターに適用される
+      # monitor を空にすると全モニターに適用される (個別指定のモニターを除く)
       wallpaper = [
+        {
+          # 縦向きモニターはキーバインドのチートシート付き壁紙
+          monitor = "HDMI-A-2";
+          path = "${../../../config/hypr/wallpapers/cheatsheet-portrait.jpg}";
+          fit_mode = "cover";
+        }
         {
           monitor = "";
           path = wallpaper;

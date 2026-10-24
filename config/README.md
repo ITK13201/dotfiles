@@ -8,7 +8,9 @@ Home Manager の `builtins.readFile` や `xdg.configFile.source` で参照する
 ```
 config/
 ├── hypr/
-│   └── hyprland.lua    # Hyprland 設定（Lua）
+│   ├── hyprland.lua    # Hyprland 設定（Lua）
+│   └── wallpapers/
+│       └── cheatsheet-portrait.jpg  # 縦向きモニター用壁紙（キーバインド一覧付き）
 ├── starship/
 │   └── starship.toml   # starship プロンプト設定
 └── waybar/
