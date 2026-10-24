@@ -110,6 +110,7 @@ in
           ""
         ];
         on-click = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
+        on-click-right = "uwsm app -- pavucontrol";
       };
       cpu = {
         format = " {usage}%";

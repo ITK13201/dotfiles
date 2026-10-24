@@ -21,6 +21,7 @@
       gparted
       (bottles.override { removeWarningPopup = true; })
       thunderbird
+      pavucontrol
     ];
     variables = {
       QT_IM_MODULE = "fcitx";

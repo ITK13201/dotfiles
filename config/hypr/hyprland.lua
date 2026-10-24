@@ -198,6 +198,15 @@ for i = 1, 10 do
 end
 
 hl.window_rule({
+    -- 音量ミキサーはポップアップとして中央にフローティング表示
+    name   = "float-pavucontrol",
+    match  = { class = "^org\\.pulseaudio\\.pavucontrol$" },
+    float  = true,
+    size   = "900 600",
+    center = true,
+})
+
+hl.window_rule({
     -- アプリからの最大化要求を無視する
     name  = "suppress-maximize-events",
     match = { class = ".*" },
